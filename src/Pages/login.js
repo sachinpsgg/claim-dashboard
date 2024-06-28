@@ -17,7 +17,6 @@ export default function Login({setUser}) {
 
         if (email === user.email && password === user.password) {
             navigate('/dashboard');
-            return(<Dashboard/>);
         } else {
             setError('Invalid username or password');
         }

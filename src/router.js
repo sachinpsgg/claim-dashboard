@@ -22,8 +22,6 @@ export const router = createBrowserRouter([
                 element : <ViewClaim/>
             }
         ]
-
-
     },
     {
         path : '/',
