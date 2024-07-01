@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
         children : [
             {
                 path : 'summery',
-                element : <UploadFiles/>
+                element : <h1>Summery Page</h1>
             },
             {
                 path : 'upload',
@@ -20,6 +20,22 @@ export const router = createBrowserRouter([
             {
                 path : 'manage-claims',
                 element : <ViewClaim/>
+            },
+            {
+                path : 'view-era',
+                element : <h1>View ERA Page</h1>
+            },
+            {
+                path : 'reporting',
+                element : <h1>Reporting Page</h1>
+            },
+            {
+                path : 'eligibility',
+                element : <h1>Eligibility Page</h1>
+            },
+            {
+                path : 'search',
+                element : <h1>Search Page</h1>
             }
         ]
     },
