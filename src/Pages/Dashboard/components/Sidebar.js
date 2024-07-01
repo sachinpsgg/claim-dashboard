@@ -32,18 +32,17 @@ const Sidebar = ({ isCollapsed, handleContentChange, sidebarClass, buttonClass, 
                     toggleDropdown={() => toggleDropdown('claim')}
                     isCollapsed={isCollapsed}
                     items={[
-                        { icon: <CiHome />, label: 'Summery Page', content: 'Summery Page' , to: '/dashboard' },
+                        { icon: <CiHome />, label: 'Summery Page', content: 'Summery Page' , to: '/dashboard/summery' },
                         { icon: <FaFileUpload />, label: 'Upload Files', content: 'Upload Files' ,  to: '/dashboard/upload'  },
                         { icon: <CiBoxList />, label: 'Manage Claims', content: 'Manage Claims' ,  to: '/dashboard/manage-claims'  },
-                        { icon: <CiViewColumn />, label: 'View ERA', content: 'View ERA' },
-                        { icon: <TbReportSearch />, label: 'Reporting', content: 'Reporting' },
-                        { icon: <IoIosPerson />, label: 'Eligibility', content: 'Eligibility' },
-                        { icon: <FaSearch />, label: 'Search', content: 'Search' }
+                        { icon: <CiViewColumn />, label: 'View ERA', content: 'View ERA' , to: '/dashboard/view-era'},
+                        { icon: <TbReportSearch />, label: 'Reporting', content: 'Reporting' , to: '/dashboard/reporting'},
+                        { icon: <IoIosPerson />, label: 'Eligibility', content: 'Eligibility' , to: '/dashboard/eligibility' },
+                        { icon: <FaSearch />, label: 'Search', content: 'Search' ,to: '/dashboard/search' }
                     ]}
                     handleContentChange={handleLinkClick}
                     buttonClass={buttonClass}
                     dropdownClass={dropdownClass}
-                    activeLink={activeLink}
                 />
                 <Dropdown
                     title="Manage Account"
