@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
         children : [
             {
                 path : 'summery',
-                element : <h1>Summery Page</h1>
+                element : <UploadFiles/>
             },
             {
                 path : 'upload',
