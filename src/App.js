@@ -2,12 +2,12 @@ import logo from './logo.svg';
 import './App.scss';
 import Login from './Pages/login';
 import './sass/style.scss';
-import Dashboard from "./Pages/Dashboard/dashboard";
+import ViewClaim from './Pages/ViewClaims';
 
 function App() {
   return (
       <Login/>
-    // <Dashboard />
+    // <ViewClaim />
   );
 }
 
