@@ -1,6 +1,5 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-import {CgHome} from "react-icons/cg";
 
 const Links = ({ className , title , to , Icon}) => (
     <NavLink

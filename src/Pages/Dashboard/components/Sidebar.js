@@ -7,7 +7,7 @@ import { IoCloudUploadOutline } from "react-icons/io5";
 import { MdOutlineManageHistory } from "react-icons/md";
 import { LuView } from "react-icons/lu";
 import { FaChartPie } from "react-icons/fa";
-import { FaPersonCircleCheck } from "react-icons/fa6";
+import {FaPersonCircleCheck, FaS} from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { FcOnlineSupport } from "react-icons/fc";
 import { FaUsersGear } from "react-icons/fa6";
@@ -59,52 +59,64 @@ export default function Sidebar() {
                   />
                 </li>
                 <li>
-                  <NavLink className="sidebar--sidebar-content--collapse--menu-list--menu-item" to="/dashboard/summery">
-                    <FaChartPie className="sidebar--sidebar-content--collapse--menu-list--menu-item--menu-icon"/>Reporting
-                  </NavLink>
+                  <Links to="/dashboard/reporting"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Reproting"
+                         Icon={FaChartPie}
+                  />
                 </li>
                 <li>
-                  <NavLink className="sidebar--sidebar-content--collapse--menu-list--menu-item" to="/dashboard/summery">
-                    <FaPersonCircleCheck
-                        className="sidebar--sidebar-content--collapse--menu-list--menu-item--menu-icon"/> Eligibility
-                  </NavLink>
+                  <Links to="/dashboard/eligibility"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Eligibility"
+                         Icon={FaPersonCircleCheck}
+                  />
                 </li>
                 <li>
-                  <NavLink className="sidebar--sidebar-content--collapse--menu-list--menu-item" to="/dashboard/summery">
-                    <FaSearch
-                        className="sidebar--sidebar-content--collapse--menu-list--menu-item--menu-icon"/> Search
-                  </NavLink>
+                  <Links to="/dashboard/search"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Search"
+                         Icon={FaSearch}
+                  />
                 </li>
               </ul>
               <hr className="sidebar--sidebar-content--collapse--divider"/>
               <h6 className="sidebar--sidebar-content--collapse--menu-heading">Manage Account</h6>
               <ul className="sidebar--sidebar-content--collapse--menu-list">
                 <li>
-                  <NavLink className="sidebar--sidebar-content--collapse--menu-list--menu-item" to="/dashboard/summery">
-                    <FcOnlineSupport className="sidebar--sidebar-content--collapse--menu-list--menu-item--menu-icon"/> Support Tickets
-                  </NavLink>
+                  <Links to="/dashboard/support-tickets"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Support Tickets"
+                         Icon={FcOnlineSupport}
+                  />
                 </li>
                 <li>
-                  <NavLink className="sidebar--sidebar-content--collapse--menu-list--menu-item" to="/dashboard/summery">
-                    <FaUsersGear
-                        className="sidebar--sidebar-content--collapse--menu-list--menu-item--menu-icon"/> Manage Users
-                  </NavLink>
+                  <Links to="/dashboard/manage-users"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Manage Users"
+                         Icon={FaUsersGear}
+                  />
                 </li>
                 <li>
-                  <NavLink className="sidebar--sidebar-content--collapse--menu-list--menu-item" to="/dashboard/summery">
-                    <LiaFileInvoiceSolid
-                        className="sidebar--sidebar-content--collapse--menu-list--menu-item--menu-icon"/> View/Pay Invoices
-                  </NavLink>
+                  <Links to="/dashboard/manage-users"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="View/Pay Invoices"
+                         Icon={LiaFileInvoiceSolid}
+                  />
                 </li>
                 <li>
-                  <NavLink className="sidebar--sidebar-content--collapse--menu-list--menu-item" to="/dashboard/summery">
-                    <FcCollect className="sidebar--sidebar-content--collapse--menu-list--menu-item--menu-icon"/> Prov Enrollment
-                  </NavLink>
+                  <Links to="/dashboard/manage-users"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Prov Enrollment"
+                         Icon={FcCollect}
+                  />
                 </li>
                 <li>
-                  <NavLink className="sidebar--sidebar-content--collapse--menu-list--menu-item" to="/dashboard/summery">
-                    <FiSettings className="sidebar--sidebar-content--collapse--menu-list--menu-item--menu-icon"/>Settings
-                  </NavLink>
+                  <Links to="/dashboard/manage-users"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Settings"
+                         Icon={FiSettings}
+                  />
                 </li>
               </ul>
             </div>

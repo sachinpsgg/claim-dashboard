@@ -1,0 +1,12 @@
+.right-panel{
+  display: flex;
+  position: relative;
+  margin-left: 16rem;
+  flex-direction: column;
+  background: rgba(241, 245, 249);
+  &--outlet{
+    padding-top: 4rem;
+    padding-left: 20px;
+    //padding: 16px;
+  }
+}
