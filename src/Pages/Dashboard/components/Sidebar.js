@@ -1,69 +1,127 @@
-import React, { useState } from 'react';
-import { CiHome, CiBoxList, CiViewColumn, CiCirclePlus } from 'react-icons/ci';
-import { FaFileUpload, FaUsersCog, FaCcAmazonPay, FaWpforms, FaSearch } from 'react-icons/fa';
-import { TbReportSearch } from 'react-icons/tb';
-import { IoIosPerson, IoIosSettings } from 'react-icons/io';
-import Dropdown from "./DropDown";
 
-const Sidebar = ({ isCollapsed, handleContentChange, sidebarClass, buttonClass, dropdownClass }) => {
-    const [isClaimDropdownOpen, setIsClaimDropdownOpen] = useState(true);
-    const [isManageAccountDropdownOpen, setIsManageAccountDropdownOpen] = useState(true);
-    const [activeLink, setActiveLink] = useState('Summery Page');
+/*eslint-disable*/
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { CgHome } from "react-icons/cg";
+import { IoCloudUploadOutline } from "react-icons/io5";
+import { MdOutlineManageHistory } from "react-icons/md";
+import { LuView } from "react-icons/lu";
+import { FaChartPie } from "react-icons/fa";
+import {FaPersonCircleCheck, FaS} from "react-icons/fa6";
+import { FaSearch } from "react-icons/fa";
+import { FcOnlineSupport } from "react-icons/fc";
+import { FaUsersGear } from "react-icons/fa6";
+import { LiaFileInvoiceSolid } from "react-icons/lia";
+import { FiSettings } from "react-icons/fi";
+import { FcCollect } from "react-icons/fc";
+import { FaBars } from "react-icons/fa6";
+import Links from "./Links";
 
-    const toggleDropdown = (dropdown) => {
-        if (dropdown === 'claim') {
-            setIsClaimDropdownOpen(!isClaimDropdownOpen);
-        } else if (dropdown === 'manageAccount') {
-            setIsManageAccountDropdownOpen(!isManageAccountDropdownOpen);
-        }
-    };
-
-    const handleLinkClick = (content) => {
-        setActiveLink(content);
-        handleContentChange(content);
-    };
-
-    return (
-        <div className={`bg-gray-800 text-white ${isCollapsed ? 'w-16' : 'w-60'} transition-all duration-700 ${sidebarClass}`}>
-            <div className="p-4">
-                <Dropdown
-                    title="Claim Menu"
-                    isOpen={isClaimDropdownOpen}
-                    toggleDropdown={() => toggleDropdown('claim')}
-                    isCollapsed={isCollapsed}
-                    items={[
-                        { icon: <CiHome />, label: 'Summery Page', content: 'Summery Page' , to: '/dashboard/summery' },
-                        { icon: <FaFileUpload />, label: 'Upload Files', content: 'Upload Files' ,  to: '/dashboard/upload'  },
-                        { icon: <CiBoxList />, label: 'Manage Claims', content: 'Manage Claims' ,  to: '/dashboard/manage-claims'  },
-                        { icon: <CiViewColumn />, label: 'View ERA', content: 'View ERA' , to: '/dashboard/view-era'},
-                        { icon: <TbReportSearch />, label: 'Reporting', content: 'Reporting' , to: '/dashboard/reporting'},
-                        { icon: <IoIosPerson />, label: 'Eligibility', content: 'Eligibility' , to: '/dashboard/eligibility' },
-                        { icon: <FaSearch />, label: 'Search', content: 'Search' ,to: '/dashboard/search' }
-                    ]}
-                    handleContentChange={handleLinkClick}
-                    buttonClass={buttonClass}
-                    dropdownClass={dropdownClass}
-                />
-                <Dropdown
-                    title="Manage Account"
-                    isOpen={isManageAccountDropdownOpen}
-                    toggleDropdown={() => toggleDropdown('manageAccount')}
-                    isCollapsed={isCollapsed}
-                    items={[
-                        { icon: <CiCirclePlus />, label: 'Support Tickets', content: 'Support Tickets' },
-                        { icon: <FaUsersCog />, label: 'Manage Users', content: 'Manage Users' },
-                        { icon: <FaCcAmazonPay />, label: 'View/Pay Invoices', content: 'View/Pay Invoices' },
-                        { icon: <FaWpforms />, label: 'Prov Enrollment', content: 'Prov Enrollment' },
-                        { icon: <IoIosSettings />, label: 'Settings', content: 'Settings' }
-                    ]}
-                    handleContentChange={handleLinkClick}
-                    buttonClass={buttonClass}
-                    dropdownClass={dropdownClass}
-                    activeLink={activeLink}
-                />
+export default function Sidebar() {
+  const [collapseShow, setCollapseShow] = React.useState("");
+  return (
+      <>
+        <nav className="sidebar">
+          <div className="sidebar--sidebar-content">
+            <NavLink className="sidebar--sidebar-content--brand" to="/">
+              Claim.MD
+            </NavLink>
+            <hr className="sidebar--sidebar-content--divider"/>
+            <div className="sidebar--sidebar-content--collapse">
+              <h6 className="sidebar--sidebar-content--collapse--menu-heading">Claim Menu</h6>
+              <ul className="sidebar--sidebar-content--collapse--menu-list">
+                <li>
+                  <Links to="/dashboard/summery"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Summery Page"
+                         Icon={CgHome}
+                  />
+                </li>
+                <li>
+                  <Links to="/dashboard/upload"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Upload Files"
+                         Icon={IoCloudUploadOutline}
+                  />
+                </li>
+                <li>
+                  <Links to="/dashboard/manage-claims"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Manage Claims"
+                         Icon={MdOutlineManageHistory}
+                  />
+                </li>
+                <li>
+                  <Links to="/dashboard/view-era"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="View ERA"
+                         Icon={LuView}
+                  />
+                </li>
+                <li>
+                  <Links to="/dashboard/reporting"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Reproting"
+                         Icon={FaChartPie}
+                  />
+                </li>
+                <li>
+                  <Links to="/dashboard/eligibility"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Eligibility"
+                         Icon={FaPersonCircleCheck}
+                  />
+                </li>
+                <li>
+                  <Links to="/dashboard/search"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Search"
+                         Icon={FaSearch}
+                  />
+                </li>
+              </ul>
+              <hr className="sidebar--sidebar-content--collapse--divider"/>
+              <h6 className="sidebar--sidebar-content--collapse--menu-heading">Manage Account</h6>
+              <ul className="sidebar--sidebar-content--collapse--menu-list">
+                <li>
+                  <Links to="/dashboard/support-tickets"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Support Tickets"
+                         Icon={FcOnlineSupport}
+                  />
+                </li>
+                <li>
+                  <Links to="/dashboard/manage-users"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Manage Users"
+                         Icon={FaUsersGear}
+                  />
+                </li>
+                <li>
+                  <Links to="/dashboard/manage-users"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="View/Pay Invoices"
+                         Icon={LiaFileInvoiceSolid}
+                  />
+                </li>
+                <li>
+                  <Links to="/dashboard/manage-users"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Prov Enrollment"
+                         Icon={FcCollect}
+                  />
+                </li>
+                <li>
+                  <Links to="/dashboard/manage-users"
+                         className="sidebar--sidebar-content--collapse--menu-list--menu-item"
+                         title="Settings"
+                         Icon={FiSettings}
+                  />
+                </li>
+              </ul>
             </div>
-        </div>
-    );
-};
-
-export default Sidebar;
+          </div>
+        </nav>
+      </>
+  );
+}

@@ -3,7 +3,6 @@ import Login from "./Pages/login";
 import Dashboard from "./Pages/Dashboard/dashboard";
 import UploadFiles from "./Pages/FileUpload";
 import ViewClaim from "./Pages/ViewClaims";
-import ClaimForm from "./Pages/ClaimForm";
 
 export const router = createBrowserRouter([
     {
@@ -12,7 +11,7 @@ export const router = createBrowserRouter([
         children : [
             {
                 path : 'summery',
-                element : <h1>Summery Page</h1>
+                element : <UploadFiles/>
             },
             {
                 path : 'upload',
@@ -42,6 +41,6 @@ export const router = createBrowserRouter([
     },
     {
         path : '/',
-        element : <Login />
+        element : <Login/>
     },
 ])

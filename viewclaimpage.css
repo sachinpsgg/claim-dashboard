@@ -28,34 +28,3 @@
   box-shadow: none !important;
   margin-top: 20px;
 }
-
-.edit-claim-page {
-  padding: 30px;
-}
-.edit-claim-page--container {
-  padding: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.edit-claim-page--container--table-heading {
-  font-size: 25px;
-  font-weight: 500;
-  border-bottom: 1px solid gray;
-  padding-bottom: 5px;
-}
-.edit-claim-page--container--file-details {
-  margin-top: 10px;
-  font-size: 14px;
-  display: flex;
-  justify-content: space-between;
-}
-.edit-claim-page--container--claim-number {
-  padding: 2px;
-  background-color: #000;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 15px;
-}
-.edit-claim-page--container table {
-  box-shadow: none !important;
-  margin-top: 20px;
-}

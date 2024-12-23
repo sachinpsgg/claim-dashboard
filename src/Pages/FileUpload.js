@@ -1,28 +1,31 @@
+
 import React, { useState } from 'react';
 
-const UploadFiles = ({ uploadButtonClass, uploadContainerClass }) => {
+const UploadFiles = () => {
     const [showUploadPopup, setShowUploadPopup] = useState(false);
 
     const toggleUploadPopup = () => {
         setShowUploadPopup(!showUploadPopup);
     };
-
+    // return(
+    //     <p>h1</p>
+    // )
     return (
-        <div className={uploadContainerClass}>
-            <button className={`bg-blue-500 text-white p-2 rounded ${uploadButtonClass}`} onClick={toggleUploadPopup}>
+        <div>
+            <button onClick={toggleUploadPopup}>
                 Upload Files
             </button>
 
             {showUploadPopup && (
-                <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
-                    <div className="bg-white p-8 rounded shadow-lg">
-                        <h2 className="text-2xl mb-4">Upload your files</h2>
-                        <input type="file" className="mb-4" />
-                        <div className="flex justify-end">
-                            <button className="bg-red-500 text-white p-2 rounded mr-2" onClick={toggleUploadPopup}>
+                <div className="upload-popup-overlay">
+                    <div className="upload-popup">
+                        <h2 className="upload-popup-title">Upload your files</h2>
+                        <input type="file" className="upload-input" />
+                        <div className="upload-popup-actions">
+                            <button className="cancel-button" onClick={toggleUploadPopup}>
                                 Cancel
                             </button>
-                            <button className="bg-blue-500 text-white p-2 rounded">
+                            <button className="confirm-button">
                                 Upload
                             </button>
                         </div>
@@ -30,30 +33,30 @@ const UploadFiles = ({ uploadButtonClass, uploadContainerClass }) => {
                 </div>
             )}
 
-            <div className="mt-6">
-                <table className="min-w-full bg-white">
+            <div className="table-container">
+                <table className="upload-table">
                     <thead>
                     <tr>
-                        <th className="py-2 px-4 border">View</th>
-                        <th className="py-2 px-4 border">Type</th>
-                        <th className="py-2 px-4 border">Filename</th>
-                        <th className="py-2 px-4 border">Qty</th>
-                        <th className="py-2 px-4 border">Amount</th>
-                        <th className="py-2 px-4 border">Upload Time</th>
-                        <th className="py-2 px-4 border">Method</th>
-                        <th className="py-2 px-4 border">Uploaded By</th>
+                        <th className="table-header">View</th>
+                        <th className="table-header">Type</th>
+                        <th className="table-header">Filename</th>
+                        <th className="table-header">Qty</th>
+                        <th className="table-header">Amount</th>
+                        <th className="table-header">Upload Time</th>
+                        <th className="table-header">Method</th>
+                        <th className="table-header">Uploaded By</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td className="py-2 px-4 border">View</td>
-                        <td className="py-2 px-4 border">Type</td>
-                        <td className="py-2 px-4 border">Filename</td>
-                        <td className="py-2 px-4 border">Qty</td>
-                        <td className="py-2 px-4 border">Amount</td>
-                        <td className="py-2 px-4 border">Upload Time</td>
-                        <td className="py-2 px-4 border">Method</td>
-                        <td className="py-2 px-4 border">Uploaded By</td>
+                        <td className="table-cell">View</td>
+                        <td className="table-cell">Type</td>
+                        <td className="table-cell">Filename</td>
+                        <td className="table-cell">Qty</td>
+                        <td className="table-cell">Amount</td>
+                        <td className="table-cell">Upload Time</td>
+                        <td className="table-cell">Method</td>
+                        <td className="table-cell">Uploaded By</td>
                     </tr>
                     </tbody>
                 </table>
@@ -63,3 +66,4 @@ const UploadFiles = ({ uploadButtonClass, uploadContainerClass }) => {
 };
 
 export default UploadFiles;
+

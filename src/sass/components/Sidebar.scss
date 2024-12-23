@@ -1,0 +1,130 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  width: 256px;
+  background-color: white;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 16px;
+  &--sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    &--brand {
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 16px 0;
+    }
+    &--divider {
+      margin: 16px 0;
+      border: 1px solid #e0e0e0;
+    }
+    &--collapse {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow-y: auto;
+      &--divider{
+        margin: 16px 0;
+        border: 1px solid #e0e0e0;
+      }
+      &--menu-heading {
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      &--menu-list {
+        list-style: none;
+        padding: 0;
+        &--menu-item {
+          display: flex;
+          align-items: center;
+          font-size: 12px;
+          font-weight: bold;
+          text-transform: uppercase;
+          color: #212529;
+          padding: 12px 0;
+          text-decoration: none;
+          &--menu-icon {
+            margin-right: 8px;
+            font-size: 18px;
+          }
+          &--active{
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 12px 0;
+            text-decoration: none;
+            color: #5e65e4;
+          }
+        }
+        &--menu-item:hover {
+          color: #5e72e4;
+        }
+      }
+    }
+  }
+}
+
+.toggle-button {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  margin-bottom: 16px;
+}
+
+
+.collapse.hidden {
+  display: none;
+}
+
+.collapse-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.brand-mobile {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.close-button {
+  cursor: pointer;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  outline: none;
+}
+
+
